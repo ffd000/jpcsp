@@ -87,55 +87,8 @@ LOCATION(2) out float fogDepth;
 #if !USE_DYNAMIC_DEFINES || NUMBER_BONES > 0
 void ApplySkinning(inout vec3 Vv, inout vec3 Nv)
 {
-    vec3  V = vec3(0.0, 0.0, 0.0);
-    vec3  N = V;
-    float W = 0.0;
-    mat3  M;
-    vec4  W1 = pspWeights1 / weightScale;
-    #if !USE_DYNAMIC_DEFINES || NUMBER_BONES > 4
-        vec4  W2 = pspWeights2 / weightScale;
-    #endif
-
-    #if USE_DYNAMIC_DEFINES
-        #if NUMBER_BONES >= 8
-            W = W2[3]; M = mat3(pspBoneMatrix[7]); V += (M * Vv + pspBoneMatrix[7][3].xyz) * W; N += M * Nv * W;
-        #endif
-        #if NUMBER_BONES >= 7
-            W = W2[2]; M = mat3(pspBoneMatrix[6]); V += (M * Vv + pspBoneMatrix[6][3].xyz) * W; N += M * Nv * W;
-        #endif
-        #if NUMBER_BONES >= 6
-            W = W2[1]; M = mat3(pspBoneMatrix[5]); V += (M * Vv + pspBoneMatrix[5][3].xyz) * W; N += M * Nv * W;
-        #endif
-        #if NUMBER_BONES >= 5
-            W = W2[0]; M = mat3(pspBoneMatrix[4]); V += (M * Vv + pspBoneMatrix[4][3].xyz) * W; N += M * Nv * W;
-        #endif
-        #if NUMBER_BONES >= 4
-            W = W1[3]; M = mat3(pspBoneMatrix[3]); V += (M * Vv + pspBoneMatrix[3][3].xyz) * W; N += M * Nv * W;
-        #endif
-        #if NUMBER_BONES >= 3
-            W = W1[2]; M = mat3(pspBoneMatrix[2]); V += (M * Vv + pspBoneMatrix[2][3].xyz) * W; N += M * Nv * W;
-        #endif
-        #if NUMBER_BONES >= 2
-            W = W1[1]; M = mat3(pspBoneMatrix[1]); V += (M * Vv + pspBoneMatrix[1][3].xyz) * W; N += M * Nv * W;
-        #endif
-        #if NUMBER_BONES >= 1
-            W = W1[0]; M = mat3(pspBoneMatrix[0]); V += (M * Vv + pspBoneMatrix[0][3].xyz) * W; N += M * Nv * W;
-        #endif
-    #else
-        switch (pspNumberBones)
-        {
-        case 8: W = W2[3]; M = mat3(pspBoneMatrix[7]); V += (M * Vv + pspBoneMatrix[7][3].xyz) * W; N += M * Nv * W; // fallthrough
-        case 7: W = W2[2]; M = mat3(pspBoneMatrix[6]); V += (M * Vv + pspBoneMatrix[6][3].xyz) * W; N += M * Nv * W; // fallthrough
-        case 6: W = W2[1]; M = mat3(pspBoneMatrix[5]); V += (M * Vv + pspBoneMatrix[5][3].xyz) * W; N += M * Nv * W; // fallthrough
-        case 5: W = W2[0]; M = mat3(pspBoneMatrix[4]); V += (M * Vv + pspBoneMatrix[4][3].xyz) * W; N += M * Nv * W; // fallthrough
-        case 4: W = W1[3]; M = mat3(pspBoneMatrix[3]); V += (M * Vv + pspBoneMatrix[3][3].xyz) * W; N += M * Nv * W; // fallthrough
-        case 3: W = W1[2]; M = mat3(pspBoneMatrix[2]); V += (M * Vv + pspBoneMatrix[2][3].xyz) * W; N += M * Nv * W; // fallthrough
-        case 2: W = W1[1]; M = mat3(pspBoneMatrix[1]); V += (M * Vv + pspBoneMatrix[1][3].xyz) * W; N += M * Nv * W; // fallthrough
-        case 1: W = W1[0]; M = mat3(pspBoneMatrix[0]); V += (M * Vv + pspBoneMatrix[0][3].xyz) * W; N += M * Nv * W;
-        }
-    #endif
-    Vv = V;
-    Nv = N;
+    Vv = Vv;
+    Nv = Nv;
 }
 #endif
 
