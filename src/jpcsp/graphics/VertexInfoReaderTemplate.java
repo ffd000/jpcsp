@@ -88,17 +88,17 @@ public class VertexInfoReaderTemplate {
                 switch (weight) {
                     case 1:
                         // Unsigned 8 bit, mapped to [0..2]
-                        v.boneWeights[i] = mem.read8(addr++);
-                        v.boneWeights[i] /= 0x80;
+                       // v.boneWeights[i] = mem.read8(addr++);
+                       // v.boneWeights[i] /= 0x80;
                         break;
                     case 2:
                         // Unsigned 16 bit, mapped to [0..2]
-                        v.boneWeights[i] = mem.read16(addr);
-                        v.boneWeights[i] /= 0x8000;
+                       // v.boneWeights[i] = mem.read16(addr);
+                       // v.boneWeights[i] /= 0x8000;
                         addr += 2;
                         break;
                     case 3:
-                        v.boneWeights[i] = Float.intBitsToFloat(mem.read32(addr));
+                       // v.boneWeights[i] = Float.intBitsToFloat(mem.read32(addr));
                         addr += 4;
                         break;
                 }
