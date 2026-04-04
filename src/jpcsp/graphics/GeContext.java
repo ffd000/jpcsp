@@ -492,7 +492,7 @@ public class GeContext extends pspAbstractMemoryMappedStructure {
 		writeFloatArray(texture_uploaded_matrix);
 		writeFloatArray(model_uploaded_matrix);
 		writeFloatArray(view_uploaded_matrix);
-		writeFloatArray(bone_uploaded_matrix);
+		//writeFloatArray(bone_uploaded_matrix);
 
 		writeBoolean(depthMask);
 		write32Array(colorMask);
