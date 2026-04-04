@@ -997,7 +997,7 @@ public class VertexInfoReader {
 			normal[1] = ((byte) memoryReader.readNext8()) / 127f;
 			normal[2] = ((byte) memoryReader.readNext8()) / 127f;
 			if (vertexInfo.weight != 0) {
-				videoEngine.doNormalSkinning(vertexInfo, boneWeights, normal);
+				//videoEngine.doNormalSkinning(vertexInfo, boneWeights, normal);
 			}
 			vertexDataBuffer.put(normal[0]);
 			vertexDataBuffer.put(normal[1]);
@@ -1040,7 +1040,7 @@ public class VertexInfoReader {
 			normal[1] = ((short) memoryReader.readNext16()) / 32767f;
 			normal[2] = ((short) memoryReader.readNext16()) / 32767f;
 			if (vertexInfo.weight != 0) {
-				videoEngine.doNormalSkinning(vertexInfo, boneWeights, normal);
+				//videoEngine.doNormalSkinning(vertexInfo, boneWeights, normal);
 			}
 			vertexDataBuffer.put(normal[0]);
 			vertexDataBuffer.put(normal[1]);
@@ -1078,7 +1078,7 @@ public class VertexInfoReader {
 			normal[0] = memoryReader.readNextFloat();
 			normal[1] = memoryReader.readNextFloat();
 			normal[2] = memoryReader.readNextFloat();
-			videoEngine.doNormalSkinning(vertexInfo, boneWeights, normal);
+			//videoEngine.doNormalSkinning(vertexInfo, boneWeights, normal);
 			vertexDataBuffer.put(normal[0]);
 			vertexDataBuffer.put(normal[1]);
 			vertexDataBuffer.put(normal[2]);
@@ -1123,7 +1123,7 @@ public class VertexInfoReader {
 				position[1] = ((byte) memoryReader.readNext8()) / 127f;
 				position[2] = ((byte) memoryReader.readNext8()) / 127f;
 				if (vertexInfo.weight != 0) {
-					videoEngine.doPositionSkinning(vertexInfo, boneWeights, position);
+					//videoEngine.doPositionSkinning(vertexInfo, boneWeights, position);
 				}
 				vertexDataBuffer.put(position[0]);
 				vertexDataBuffer.put(position[1]);
@@ -1171,7 +1171,7 @@ public class VertexInfoReader {
 				position[1] = ((short) memoryReader.readNext16()) / 32767f;
 				position[2] = ((short) memoryReader.readNext16()) / 32767f;
 				if (vertexInfo.weight != 0) {
-					videoEngine.doPositionSkinning(vertexInfo, boneWeights, position);
+					//videoEngine.doPositionSkinning(vertexInfo, boneWeights, position);
 				}
 				vertexDataBuffer.put(position[0]);
 				vertexDataBuffer.put(position[1]);
@@ -1212,7 +1212,7 @@ public class VertexInfoReader {
 			position[1] = memoryReader.readNextFloat();
 			position[2] = memoryReader.readNextFloat();
 			if (vertexInfo.weight != 0) {
-				videoEngine.doPositionSkinning(vertexInfo, boneWeights, position);
+				//videoEngine.doPositionSkinning(vertexInfo, boneWeights, position);
 			}
 			if (vertexInfo.transform2D) {
 				// Z is an integer value clamped between 0 and 65535
@@ -1295,7 +1295,7 @@ public class VertexInfoReader {
 		public void read() {
 			for (int i = 0; i < vertexInfo.skinningWeightCount; i++) {
             	// Unsigned 16 bit, mapped to [0..2]
-				boneWeights[i] = memoryReader.readNext16() / 32768f;
+				//boneWeights[i] = memoryReader.readNext16() / 32768f;
 			}
 		}
 
@@ -1329,7 +1329,7 @@ public class VertexInfoReader {
 		public void read() {
 			for (int i = 0; i < vertexInfo.skinningWeightCount; i++) {
 				// Float value
-				boneWeights[i] = memoryReader.readNextFloat();
+				//boneWeights[i] = memoryReader.readNextFloat();
 			}
 		}
 
