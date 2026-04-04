@@ -219,6 +219,10 @@ public class VertexInfo {
     	}
     	vertexInfoReader.readVertex(mem, addr, v, morph_weight);
 
+        if (morph_weight != 0) {
+            v.boneWeights = null;
+        }
+
     	// HD Remaster can require to double the 2D texture coordinates
     	if (doubleTexture2DCoords && transform2D && readTexture) {
     		v.t[0] *= 2f;
