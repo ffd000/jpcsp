@@ -556,9 +556,9 @@ public class MMIOHandlerGe extends MMIOHandlerBase {
 
 	private void writeGeBone(int bone, int value) {
 		if (ExternalGE.isActive()) {
-			ExternalGE.setMatrix(sceGe_user.PSP_GE_MATRIX_BONE0 + (bone / 12), bone %12, Float.intBitsToFloat(value << 8));
+			//ExternalGE.setMatrix(sceGe_user.PSP_GE_MATRIX_BONE0 + (bone / 12), bone %12, Float.intBitsToFloat(value << 8));
 		} else if (VideoEngine.getInstance().lleIsActive()) {
-			VideoEngine.getInstance().lleSetMatrix(sceGe_user.PSP_GE_MATRIX_BONE0 + (bone / 12), bone %12, Float.intBitsToFloat(value << 8));
+			//VideoEngine.getInstance().lleSetMatrix(sceGe_user.PSP_GE_MATRIX_BONE0 + (bone / 12), bone %12, Float.intBitsToFloat(value << 8));
 		}
 	}
 
