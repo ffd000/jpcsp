@@ -219,7 +219,7 @@ public class VertexInfo {
     	}
     	vertexInfoReader.readVertex(mem, addr, v, morph_weight);
 
-        if (morph_weight != 0) {
+        if (morph_weight != 0.f) {
             v.boneWeights = new float[8];
         }
 
