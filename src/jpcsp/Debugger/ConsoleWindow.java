@@ -68,7 +68,7 @@ public class ConsoleWindow extends javax.swing.JFrame {
         SaveMessageToFileButton = new javax.swing.JButton();
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("jpcsp/languages/jpcsp"); // NOI18N
-        setTitle(bundle.getString("ConsoleWindow.title")); // NOI18N
+        setTitle("test"); // NOI18N
         setResizable(false);
 
         talogging.setColumns(20);
