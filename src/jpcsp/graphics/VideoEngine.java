@@ -2956,7 +2956,7 @@ public class VideoEngine {
 
                                 // Do skinning first as it modifies v.p and v.n
                                 if (mustComputeWeights && context.vinfo.position != 0) {
-                                    doSkinning(context.bone_uploaded_matrix, context.vinfo, v);
+                                   // doSkinning(context.bone_uploaded_matrix, context.vinfo, v);
                                 }
 
                                 if (needToDiscardVertices) {
@@ -3300,7 +3300,7 @@ public class VideoEngine {
             context.vinfo.readVertex(mem, addr, v, true, isDoubleTexture2DCoords());
 
             if (context.vinfo.weight != 0 && context.vinfo.position != 0) {
-                doSkinning(context.bone_uploaded_matrix, context.vinfo, v);
+                //doSkinning(context.bone_uploaded_matrix, context.vinfo, v);
             }
 
             // Multiply the vertex position by the model/view matrix and adjust with W
@@ -3698,7 +3698,7 @@ public class VideoEngine {
 
             context.vinfo.readVertex(mem, addr, v, false, isDoubleTexture2DCoords());
             if (context.vinfo.weight != 0 && context.vinfo.position != 0) {
-                doSkinning(context.bone_uploaded_matrix, context.vinfo, v);
+                //doSkinning(context.bone_uploaded_matrix, context.vinfo, v);
             }
             if (isLogDebugEnabled) {
                 log.debug(String.format("%s (%f,%f,%f)", helper.getCommandString(BBOX), v.p[0], v.p[1], v.p[2]));
