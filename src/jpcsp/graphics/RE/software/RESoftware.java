@@ -212,9 +212,9 @@ public class RESoftware extends NullRenderingEngine {
 			// the VideoEngine is computing the vertices and is pushing them into a buffer.
 			bufferVertexReader.readVertex(index, v);
 		}
-		if (context.vinfo.weight != 0) {
+		/*if (context.vinfo.weight != 0) {
 			VideoEngine.doSkinning(context.bone_uploaded_matrix, context.vinfo, v);
-		}
+		}*/
 	}
 
 	protected void drawArraysTriangleStrips(int first, int count) {
