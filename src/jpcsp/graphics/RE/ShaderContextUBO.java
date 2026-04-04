@@ -559,9 +559,9 @@ public class ShaderContextUBO extends ShaderContext {
 						break;
 					}
 				}
-				copy(boneMatrix, start, this.boneMatrix, start, end - start);
+				//copy(boneMatrix, start, this.boneMatrix, start, end - start);
 
-				super.setBoneMatrix(count, boneMatrix);
+				//super.setBoneMatrix(count, boneMatrix);
 			}
 		}
 	}
