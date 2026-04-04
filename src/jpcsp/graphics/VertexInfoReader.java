@@ -1261,7 +1261,7 @@ public class VertexInfoReader {
 		public void read() {
 			for (int i = 0; i < vertexInfo.skinningWeightCount; i++) {
 	        	// Unsigned 8 bit, mapped to [0..2]
-				boneWeights[i] = memoryReader.readNext8() / 128f;
+				//boneWeights[i] = memoryReader.readNext8() / 128f;
 			}
 		}
 
