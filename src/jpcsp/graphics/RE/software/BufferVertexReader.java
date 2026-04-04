@@ -58,7 +58,7 @@ public class BufferVertexReader {
 	}
 
 	public void setWeightComponentInfo(int size, int type, int stride, int bufferSize, Buffer buffer) {
-		setComponentInfo(weightComponentInfo, size, type, stride, bufferSize, buffer);
+		//setComponentInfo(weightComponentInfo, size, type, stride, bufferSize, buffer);
 	}
 
 	private void setComponentInfo(ComponentInfo componentInfo, int size, int type, int stride, int bufferSize, Buffer buffer) {
@@ -71,7 +71,7 @@ public class BufferVertexReader {
 	}
 
 	public void readVertex(int index, VertexState v) {
-		readComponent(weightComponentInfo, index, v.boneWeights);
+		//readComponent(weightComponentInfo, index, v.boneWeights);
 		readComponent(textureComponentInfo, index, v.t);
 		readComponent(colorComponentInfo, index, v.c);
 		readComponent(normalComponentInfo, index, v.n);
