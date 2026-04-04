@@ -480,7 +480,7 @@ public class sceGu extends AbstractNativeCodeSequence {
 	}
 
 	static private void sceGuBoneMatrix(int context, int listCurrentOffset, int index, int matrix) {
-		int listCurrent = read32(context + listCurrentOffset);
+		/*int listCurrent = read32(context + listCurrentOffset);
 
 		IMemoryWriter listWriter = getMemoryWriter(listCurrent, 56, 4);
 		if (writeDUMMY) {
@@ -491,7 +491,7 @@ public class sceGu extends AbstractNativeCodeSequence {
 		listCurrent += sceGuSetMatrix4x3(listWriter, matrixReader, GeCommands.BOFS, GeCommands.BONE, index * 12);
 		listWriter.flush();
 
-		write32(context + listCurrentOffset, listCurrent);
+		write32(context + listCurrentOffset, listCurrent);*/
 	}
 
 	static public void sceGuDrawSprite(int contextAddr1, int contextAddr2, int listCurrentOffset, int wOffset, int hOffset, int dxOffset, int dyOffset) {
