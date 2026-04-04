@@ -469,14 +469,14 @@ public class sceGu extends AbstractNativeCodeSequence {
 		int index = getGprA0();
 		int matrix = getGprA1();
 		int context = read32(getRelocatedAddress(contextAddr1, contextAddr2));
-		sceGuBoneMatrix(context, listCurrentOffset, index, matrix);
+		//sceGuBoneMatrix(context, listCurrentOffset, index, matrix);
 	}
 
 	static public void sceGuBoneMatrix(int listCurrentOffset) {
 		int context = getGprA0();
 		int index = getGprA1();
 		int matrix = getGprA2();
-		sceGuBoneMatrix(context, listCurrentOffset, index, matrix);
+		//sceGuBoneMatrix(context, listCurrentOffset, index, matrix);
 	}
 
 	static private void sceGuBoneMatrix(int context, int listCurrentOffset, int index, int matrix) {
