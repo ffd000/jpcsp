@@ -550,9 +550,16 @@ public class MMIOHandlerGe extends MMIOHandlerBase {
 		return value;
 	}
 
-	private int readGeBone(int bone) {
+	/*private int readGeBone(int bone) {
 		return readMatrix(sceGe_user.PSP_GE_MATRIX_BONE0 + (bone / 12), bone % 12);
-	}
+	}*/
+    private int readGeBone(int bone) {
+        int index = bone % 12;
+        if (index == 0 || index == 5 || index == 10) {
+            return Float.floatToRawIntBits(1.0f) >>> 8;
+        }
+        return 0;
+    }
 
 	private void writeGeBone(int bone, int value) {
 		if (ExternalGE.isActive()) {
