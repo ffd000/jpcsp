@@ -312,12 +312,12 @@ public class GeContext extends pspAbstractMemoryMappedStructure {
 		readFloatArray(texture_uploaded_matrix);
 		readFloatArray(model_uploaded_matrix);
 		readFloatArray(view_uploaded_matrix);
-		readFloatArray(bone_uploaded_matrix);
+		//readFloatArray(bone_uploaded_matrix);
 
 		// Rebuild boneMatrixLinear from bone_uploaded_matrix
 		for (int matrix = 0, j = 0; matrix < bone_uploaded_matrix.length; matrix++) {
 			for (int i = 0; i < 12; i++, j++) {
-				boneMatrixLinear[(j / 3) * 4 + (j % 3)] = bone_uploaded_matrix[matrix][i];
+				//boneMatrixLinear[(j / 3) * 4 + (j % 3)] = bone_uploaded_matrix[matrix][i];
 			}
 		}
 
