@@ -798,7 +798,7 @@ public class REShader extends BaseRenderingEngineFunction {
 	@Override
 	public int setBones(int count, float[] values) {
 		shaderContext.setNumberBones(count);
-		shaderContext.setBoneMatrix(count, values);
+		//shaderContext.setBoneMatrix(count, values);
         numberOfWeightsForShader = 0;
 		//super.setBones(count, values);
 
