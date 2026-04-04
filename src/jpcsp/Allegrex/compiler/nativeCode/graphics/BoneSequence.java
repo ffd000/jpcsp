@@ -29,6 +29,9 @@ import jpcsp.memory.MemoryWriter;
  */
 public class BoneSequence extends AbstractNativeCodeSequence {
 	static public void call(int baseAddressReg, int offset1, int offset2, int offset3, int destAddressReg) {
+        if (true) {
+            return;
+        }
 		int baseAddress = getRegisterValue(baseAddressReg);
 		int paramAddr = read32(baseAddress + offset1);
 		int count = read16(paramAddr + offset2);
@@ -111,6 +114,9 @@ public class BoneSequence extends AbstractNativeCodeSequence {
 	}
 
 	static public void call(int matrix1Reg, int matrix2Reg, int destReg, int countReg) {
+        if (true) {
+            return;
+        }
 		int matrix1Addr = getRegisterValue(matrix1Reg);
 		int matrix2Addr = getRegisterValue(matrix2Reg);
 		int dest = getRegisterValue(destReg);
