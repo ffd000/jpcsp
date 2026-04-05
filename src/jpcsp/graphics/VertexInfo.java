@@ -137,8 +137,8 @@ public class VertexInfo {
         vinfo.position = (vtype >> 7) & 0x3;
         vinfo.weight = (vtype >> 9) & 0x3;
         vinfo.index = (vtype >> 11) & 0x3;
-        vinfo.skinningWeightCount = ((vtype >> 14) & 0x7) + 1;
-        vinfo.morphingVertexCount = ((vtype >> 18) & 0x7) + 1;
+        vinfo.skinningWeightCount = 0;/*((vtype >> 14) & 0x7) + 1;*/
+        vinfo.morphingVertexCount = 0;/*((vtype >> 18) & 0x7) + 1;*/
         vinfo.transform2D = ((vtype >> 23) & 0x1) != 0;
 
         int vertexSize = 0;
