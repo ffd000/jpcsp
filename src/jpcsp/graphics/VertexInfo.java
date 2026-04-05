@@ -446,7 +446,7 @@ public class VertexInfo {
         this.vertexCache = vertexCache;
         cachedNumberOfVertex = numberOfVertex;
 
-        cachedMorphWeights = new float[morphingVertexCount];
+        /*cachedMorphWeights = new float[morphingVertexCount];
         System.arraycopy(morph_weight, 0, cachedMorphWeights, 0, morphingVertexCount);
 
         if (weight != 0 && numberOfWeightsForBuffer == 0 && boneMatrix != null) {
@@ -457,7 +457,8 @@ public class VertexInfo {
             }
         } else {
             cachedBoneMatrix = null;
-        }
+        }*/
+        cachedBoneMatrix = null;
 
         readForCache(numberOfVertex);
     }
