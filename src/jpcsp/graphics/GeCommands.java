@@ -669,14 +669,14 @@ public class GeCommands {
         commands[PSUB]="psub";
         commands[UNKNOWNCOMMAND_0x35]="unk 0x35";
         commands[UNKNOWNCOMMAND_0x34]="unk 0x34";
-        commands[MW7]="mw7";
+        /*commands[MW7]="mw7";
         commands[MW6]="mw6";
         commands[MW5]="mw5";
         commands[MW4]="mw4";
         commands[MW3]="mw3";
         commands[MW2]="mw2";
         commands[MW1]="mw1";
-        commands[MW0]="mw0";
+        commands[MW0]="mw0";*/
         //commands[BONE]="bone";
         //commands[BOFS]="bofs";
         commands[UNKNOWNCOMMAND_0x29]="unk 0x29";
