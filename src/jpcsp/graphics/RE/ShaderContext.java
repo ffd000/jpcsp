@@ -394,7 +394,7 @@ public class ShaderContext {
 
 	public void setBoneMatrix(int count, float[] boneMatrix) {
 		if (count > 0) {
-			System.arraycopy(boneMatrix, 0, this.boneMatrix, 0, 16 * count);
+			//System.arraycopy(boneMatrix, 0, this.boneMatrix, 0, 16 * count);
 		}
 	}
 
