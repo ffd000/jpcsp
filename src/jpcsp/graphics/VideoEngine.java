@@ -1317,7 +1317,7 @@ public class VideoEngine {
             case PSP_GE_MATRIX_BONE5:
             case PSP_GE_MATRIX_BONE6:
             case PSP_GE_MATRIX_BONE7:
-                resmtx = context.bone_uploaded_matrix[mtxtype - PSP_GE_MATRIX_BONE0];
+                //resmtx = context.bone_uploaded_matrix[mtxtype - PSP_GE_MATRIX_BONE0];
                 break;
             case PSP_GE_MATRIX_WORLD:
                 resmtx = convertMatrix4x4to3x4(context.model_uploaded_matrix);
@@ -1644,10 +1644,10 @@ public class VideoEngine {
                 executeCommandLOE();
                 break;
             case BOFS:
-                executeCommandBOFS();
+               // executeCommandBOFS();
                 break;
             case BONE:
-                executeCommandBONE();
+               // executeCommandBONE();
                 break;
             case MW0:
             case MW1:
@@ -4331,7 +4331,7 @@ public class VideoEngine {
     }
 
     private void executeCommandBOFS() {
-        boneMatrixIndex = normalArgument;
+        //boneMatrixIndex = normalArgument;
         if (isLogDebugEnabled) {
             log(String.format("bone matrix offset %d", normalArgument));
         }
@@ -5773,7 +5773,7 @@ public class VideoEngine {
     }
 
     public void doPositionSkinning(VertexInfo vinfo, float[] boneWeights, float[] position) {
-        float x = 0, y = 0, z = 0;
+        /*float x = 0, y = 0, z = 0;
         for (int i = 0; i < context.vinfo.skinningWeightCount; i++) {
             if (boneWeights[i] != 0) {
                 x += (position[0] * context.bone_uploaded_matrix[i][0]
@@ -5795,11 +5795,11 @@ public class VideoEngine {
 
         position[0] = x;
         position[1] = y;
-        position[2] = z;
+        position[2] = z;*/
     }
 
     public void doNormalSkinning(VertexInfo vinfo, float[] boneWeights, float[] normal) {
-        float nx = 0, ny = 0, nz = 0;
+        /*float nx = 0, ny = 0, nz = 0;
         for (int i = 0; i < context.vinfo.skinningWeightCount; i++) {
             if (boneWeights[i] != 0) {
                 // Normals shouldn't be translated :)
@@ -5815,7 +5815,7 @@ public class VideoEngine {
                         + normal[1] * context.bone_uploaded_matrix[i][5]
                         + normal[2] * context.bone_uploaded_matrix[i][8]) * boneWeights[i];
             }
-        }
+        }*/
 
         /*
          // TODO: I doubt psp hardware normalizes normals after skinning,
@@ -5830,13 +5830,13 @@ public class VideoEngine {
          nz *= length;
          }
          */
-        normal[0] = nx;
+        /*normal[0] = nx;
         normal[1] = ny;
-        normal[2] = nz;
+        normal[2] = nz;*/
     }
 
     public static void doSkinning(float[][] boneMatrix, VertexInfo vinfo, VertexState v) {
-        float x = 0, y = 0, z = 0;
+        /*float x = 0, y = 0, z = 0;
         float nx = 0, ny = 0, nz = 0;
         boolean hasNormal = vinfo.normal != 0;
         for (int i = 0; i < vinfo.skinningWeightCount; ++i) {
@@ -5876,7 +5876,7 @@ public class VideoEngine {
 
         v.p[0] = x;
         v.p[1] = y;
-        v.p[2] = z;
+        v.p[2] = z;*/
 
         /*
          // TODO: I doubt psp hardware normalizes normals after skinning,
@@ -5891,11 +5891,11 @@ public class VideoEngine {
          nz *= length;
          }
          */
-        if (hasNormal) {
+        /*if (hasNormal) {
             v.n[0] = nx;
             v.n[1] = ny;
             v.n[2] = nz;
-        }
+        }*/
     }
 
     private void log(String commandString, float[] matrix) {
@@ -7855,12 +7855,12 @@ public class VideoEngine {
         int type = (isBezier ? RE_BEZIER_TRIANGLES : RE_SPLINE_TRIANGLES) + Math.min(context.patch_prim, 2);
         re.setVertexInfo(context.vinfo, true, useVertexColor, useTexture, useNormal, type);
 
-        int numberOfWeightsForBuffer;
-        if (context.vinfo.weight != 0) {
+        int numberOfWeightsForBuffer = 0;
+        /*if (context.vinfo.weight != 0) {
         	numberOfWeightsForBuffer = re.setBones(context.vinfo.skinningWeightCount, context.boneMatrixLinear);
         } else {
         	numberOfWeightsForBuffer = re.setBones(0, null);
-        }
+        }*/
 
         int numberOfVertex = ucount * vcount;
         int firstVertexInfo = 0;
@@ -7955,7 +7955,7 @@ public class VideoEngine {
                 int addr = context.vinfo.getAddress(mem, cv * ucount + cu);
                 VertexState vs = context.vinfo.readVertex(mem, addr, readTexture, isDoubleTexture2DCoords());
                 if (context.vinfo.weight != 0 && context.vinfo.position != 0) {
-                    doSkinning(context.bone_uploaded_matrix, context.vinfo, vs);
+                    //doSkinning(context.bone_uploaded_matrix, context.vinfo, vs);
                 }
                 if (isLogDebugEnabled) {
                     log(String.format("control point #%d,%d p(%f,%f,%f) t(%f,%f), c(0x%08X)",
@@ -8524,7 +8524,7 @@ public class VideoEngine {
 	        case PSP_GE_MATRIX_BONE5:
 	        case PSP_GE_MATRIX_BONE6:
 	        case PSP_GE_MATRIX_BONE7:
-	            context.bone_uploaded_matrix[matrixType - PSP_GE_MATRIX_BONE0][offset] = value;
+	            //context.bone_uploaded_matrix[matrixType - PSP_GE_MATRIX_BONE0][offset] = value;
 	            break;
 	        case PSP_GE_MATRIX_WORLD:
 	            context.model_uploaded_matrix[offset] = value;
