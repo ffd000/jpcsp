@@ -105,6 +105,8 @@ public class VertexInfoReaderTemplate {
             }
         }
 
+        morphingVertexCount = 0;
+
         if (morphingVertexCount > 1 && !transform2D) {
         	//
         	// Read vertex with morphing
