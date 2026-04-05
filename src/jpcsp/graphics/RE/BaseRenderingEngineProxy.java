@@ -259,7 +259,7 @@ public class BaseRenderingEngineProxy implements IRenderingEngine {
 
 	@Override
 	public void setMorphWeight(int index, float value) {
-		proxy.setMorphWeight(index, value);
+		//proxy.setMorphWeight(index, value);
 	}
 
 	@Override
@@ -414,7 +414,7 @@ public class BaseRenderingEngineProxy implements IRenderingEngine {
 
 	@Override
 	public int setBones(int count, float[] values) {
-		return proxy.setBones(count, values);
+		return 0;
 	}
 
 	@Override
