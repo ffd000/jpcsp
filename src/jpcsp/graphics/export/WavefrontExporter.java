@@ -206,7 +206,7 @@ public class WavefrontExporter implements IGraphicsExporter {
                 exportBonesLine("");
                 exportBonesLine(String.format("# Export completed. Total bones: %d", exportBoneCount));
                 
-            } catch (IOException e) {
+            } catch (Exception e) {
                 log.error("Error writing bone hierarchy", e);
             }
         }
@@ -214,7 +214,7 @@ public class WavefrontExporter implements IGraphicsExporter {
         if (exportObj != null) {
             try {
                 exportObj.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 log.error("Error closing export.obj file", e);
             }
             exportObj = null;
