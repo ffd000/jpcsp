@@ -87,7 +87,7 @@ public class RESoftware extends NullRenderingEngine {
 
 	@Override
 	public int setBones(int count, float[] values) {
-		return count;
+		return 0;
 	}
 
 	protected void render(IRenderer renderer) {
