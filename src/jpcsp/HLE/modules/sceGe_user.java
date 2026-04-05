@@ -566,6 +566,10 @@ public class sceGe_user extends HLEModule {
         	return SceKernelErrors.ERROR_INVALID_INDEX;
     	}
 
+        if (mtxType >= 0 && mtxType <= 7) {
+            return 0;
+        }
+
     	float[] mtx;
     	if (ExternalGE.isActive()) {
     		mtx = ExternalGE.getMatrix(mtxType);
