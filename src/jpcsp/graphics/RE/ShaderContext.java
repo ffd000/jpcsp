@@ -395,15 +395,16 @@ public class ShaderContext {
 	public void setBoneMatrix(int count, float[] boneMatrix) {
 		if (count > 0) {
 			//System.arraycopy(boneMatrix, 0, this.boneMatrix, 0, 16 * count);
+            this.numberBones = 0;
 		}
 	}
 
 	public int getNumberBones() {
-		return numberBones;
+		return 0;
 	}
 
 	public void setNumberBones(int numberBones) {
-		this.numberBones = numberBones;
+		this.numberBones = 0;
 	}
 
 	public int getTexEnable() {
