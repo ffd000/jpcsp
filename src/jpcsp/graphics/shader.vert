@@ -340,11 +340,6 @@ void main()
         N /= normalScale;
     #endif
 
-    #if !USE_DYNAMIC_DEFINES
-        if (pspNumberBones > 0) ApplySkinning(V.xyz, N);
-    #elif NUMBER_BONES > 0
-        ApplySkinning(V.xyz, N);
-    #endif
 
 	// Lighting and texture mapping are done in the
 	// Tessellation Evaluation Shader, if available
