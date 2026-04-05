@@ -677,8 +677,8 @@ public class GeCommands {
         commands[MW2]="mw2";
         commands[MW1]="mw1";
         commands[MW0]="mw0";
-        commands[BONE]="bone";
-        commands[BOFS]="bofs";
+        //commands[BONE]="bone";
+        //commands[BOFS]="bofs";
         commands[UNKNOWNCOMMAND_0x29]="unk 0x29";
         commands[LOE]="loe";
         commands[CTE]="cte";
