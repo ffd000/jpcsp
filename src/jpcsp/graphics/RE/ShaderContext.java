@@ -145,8 +145,8 @@ public class ShaderContext {
 		re.setUniform1v(Uniforms.lightSpotLightCutoff.getId(shaderProgram), lightSpotLightCutoff);
 		re.setUniform3v(Uniforms.lightAttenuation.getId(shaderProgram), lightAttenuation);
 		re.setUniform(Uniforms.lightingEnable.getId(shaderProgram), lightingEnable);
-		re.setUniformMatrix4(Uniforms.boneMatrix.getId(shaderProgram), numberBones, boneMatrix);
-		re.setUniform(Uniforms.numberBones.getId(shaderProgram), numberBones);
+		//re.setUniformMatrix4(Uniforms.boneMatrix.getId(shaderProgram), numberBones, boneMatrix);
+		//re.setUniform(Uniforms.numberBones.getId(shaderProgram), numberBones);
 		re.setUniform(Uniforms.texEnable.getId(shaderProgram), texEnable);
 		re.setUniform(Uniforms.texMapMode.getId(shaderProgram), texMapMode);
 		re.setUniform(Uniforms.texMapProj.getId(shaderProgram), texMapProj);
