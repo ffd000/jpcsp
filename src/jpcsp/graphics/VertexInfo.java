@@ -196,11 +196,12 @@ public class VertexInfo {
     }
 
     public void setMorphWeights(float[] mw) {
-        if (morphingVertexCount == 1) {
+        /*if (morphingVertexCount == 1) {
             morph_weight[0] = 1.f;
         } else {
         	System.arraycopy(mw, 0, morph_weight, 0, morphingVertexCount);
-        }
+        }*/
+        morph_weight[0] = 1.f;
     }
 
     public VertexState readVertex(Memory mem, int addr, boolean readTexture, boolean doubleTexture2DCoords) {
