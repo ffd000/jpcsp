@@ -315,8 +315,8 @@ public class ShaderContextUBO extends ShaderContext {
 		curvedSurfaceType = addShaderUniform(Uniforms.curvedSurfaceType, "int");
 		splineInfo = addShaderUniform(Uniforms.splineInfo, "ivec4");
 		patchFace = addShaderUniform(Uniforms.patchFace, "int");
-		numberBones = addShaderUniform(Uniforms.numberBones, "int");
-		boneMatrix = addShaderUniform(Uniforms.boneMatrix, "mat4", 8);
+		//numberBones = addShaderUniform(Uniforms.numberBones, "int");
+		//boneMatrix = addShaderUniform(Uniforms.boneMatrix, "mat4", 8);
 		// The following entry has always to be the last one
 		endOfUBO = addShaderUniform(Uniforms.endOfUBO, "int");
 
