@@ -28,8 +28,6 @@ LOCATION(0) in vec4 pspPosition;
 LOCATION(1) in vec4 pspTexture;
 LOCATION(2) in vec4 pspColor;
 LOCATION(3) in vec3 pspNormal;
-LOCATION(4) in vec4 pspWeights1;
-LOCATION(5) in vec4 pspWeights2;
 
 // The output locations must match those defined as input in the geometry and fragment shaders
 LOCATION(0) out vec3 texCoord;
