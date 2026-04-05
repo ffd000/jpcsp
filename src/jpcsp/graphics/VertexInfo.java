@@ -202,6 +202,9 @@ public class VertexInfo {
         	System.arraycopy(mw, 0, morph_weight, 0, morphingVertexCount);
         }*/
         morph_weight[0] = 1.f;
+        for (int i = 1; i < morph_weight.length; i++) {
+            morph_weight[i] = 0.f;
+        }
     }
 
     public VertexState readVertex(Memory mem, int addr, boolean readTexture, boolean doubleTexture2DCoords) {
