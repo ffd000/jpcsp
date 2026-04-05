@@ -201,9 +201,9 @@ public class GeContext extends pspAbstractMemoryMappedStructure {
         light_pos[0][3] = light_pos[1][3] = light_pos[2][3] = light_pos[3][3] = 1.f;
         light_dir[0][3] = light_dir[1][3] = light_dir[2][3] = light_dir[3][3] = 1.f;
         morph_weight[0] = 1.f;
-        for (int i = 1; i < morph_weight.length; i++) {
+       /* for (int i = 1; i < morph_weight.length; i++) {
             morph_weight[i] = 0.f;
-        }
+        }*/
         tex_mipmap_mode = TBIAS_MODE_AUTO;
         tex_mipmap_bias = 0.f;
         tex_mipmap_bias_int = 0;
