@@ -1318,6 +1318,7 @@ public class VideoEngine {
             case PSP_GE_MATRIX_BONE6:
             case PSP_GE_MATRIX_BONE7:
                 //resmtx = context.bone_uploaded_matrix[mtxtype - PSP_GE_MATRIX_BONE0];
+                resmtx = null;
                 break;
             case PSP_GE_MATRIX_WORLD:
                 resmtx = convertMatrix4x4to3x4(context.model_uploaded_matrix);
