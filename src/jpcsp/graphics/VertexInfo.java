@@ -30,7 +30,7 @@ public class VertexInfo {
     public static final int vtypeMask = 0x009DDFFF;
     public boolean transform2D;
     public int skinningWeightCount;
-    public int morphingVertexCount;
+    public int morphingVertexCount = 1; // DISABLED: Always set to 1 to disable morph animations
     public int texture;
     public int color;
     public int normal;
@@ -99,7 +99,7 @@ public class VertexInfo {
         vtype = vertexInfo.vtype;
         transform2D = vertexInfo.transform2D;
         skinningWeightCount = vertexInfo.skinningWeightCount;
-        morphingVertexCount = vertexInfo.morphingVertexCount;
+        morphingVertexCount = 1; // DISABLED: Always set to 1 to disable morph animations
         texture = vertexInfo.texture;
         color = vertexInfo.color;
         normal = vertexInfo.normal;
@@ -138,7 +138,7 @@ public class VertexInfo {
         vinfo.weight = (vtype >> 9) & 0x3;
         vinfo.index = (vtype >> 11) & 0x3;
         vinfo.skinningWeightCount = 1;/*((vtype >> 14) & 0x7) + 1;*/
-        vinfo.morphingVertexCount = 1;/*((vtype >> 18) & 0x7) + 1;*/
+        vinfo.morphingVertexCount = 1; // DISABLED: Always set to 1 to disable morph animations
         vinfo.transform2D = ((vtype >> 23) & 0x1) != 0;
 
         int vertexSize = 0;
@@ -168,7 +168,7 @@ public class VertexInfo {
 
         vertexSize = (vertexSize + vinfo.alignmentSize - 1) & ~(vinfo.alignmentSize - 1);
         vinfo.oneVertexSize = vertexSize;
-        vinfo.vertexSize = vertexSize * vinfo.morphingVertexCount;
+        vinfo.vertexSize = vertexSize * vinfo.morphingVertexCount; // morphingVertexCount is now always 1
     }
 
     private void updateVertexInfoReader(boolean readTexture) {
@@ -196,11 +196,7 @@ public class VertexInfo {
     }
 
     public void setMorphWeights(float[] mw) {
-        /*if (morphingVertexCount == 1) {
-            morph_weight[0] = 1.f;
-        } else {
-        	System.arraycopy(mw, 0, morph_weight, 0, morphingVertexCount);
-        }*/
+        // DISABLED: Morph weights are always set to disable animations
         morph_weight[0] = 1.f;
         for (int i = 1; i < morph_weight.length; i++) {
             morph_weight[i] = 0.f;
@@ -223,9 +219,8 @@ public class VertexInfo {
     	}
     	vertexInfoReader.readVertex(mem, addr, v, morph_weight);
 
-        //if (morph_weight != 0.f) {
+        // Morph weights are disabled - no bone weights
         v.boneWeights = null;
-       // }
 
     	// HD Remaster can require to double the 2D texture coordinates
     	if (doubleTexture2DCoords && transform2D && readTexture) {
@@ -294,13 +289,14 @@ public class VertexInfo {
             return false;
         }
 
-        if (morphingVertexCount > 1) {
-            for (int i = 0; i < morphingVertexCount; i++) {
-                if (cachedMorphWeights[i] != vertexInfo.morph_weight[i]) {
-                    return false;
-                }
-            }
-        }
+        // DISABLED: Skip morph weight comparison since morphingVertexCount is always 1
+        // if (morphingVertexCount > 1) {
+        //     for (int i = 0; i < morphingVertexCount; i++) {
+        //         if (cachedMorphWeights[i] != vertexInfo.morph_weight[i]) {
+        //             return false;
+        //         }
+        //     }
+        // }
 
         // Check if the bone matrix has changed, only if not using Skinning Shaders
         if (weight != 0 && numberOfWeightsForBuffer == 0 && boneMatrix != null) {
@@ -449,18 +445,7 @@ public class VertexInfo {
         this.vertexCache = vertexCache;
         cachedNumberOfVertex = numberOfVertex;
 
-        /*cachedMorphWeights = new float[morphingVertexCount];
-        System.arraycopy(morph_weight, 0, cachedMorphWeights, 0, morphingVertexCount);
-
-        if (weight != 0 && numberOfWeightsForBuffer == 0 && boneMatrix != null) {
-            cachedBoneMatrix = new float[skinningWeightCount][];
-            for (int i = 0; i < skinningWeightCount; i++) {
-                cachedBoneMatrix[i] = new float[12];
-                System.arraycopy(boneMatrix[i], 0, cachedBoneMatrix[i], 0, 12);
-            }
-        } else {
-            cachedBoneMatrix = null;
-        }*/
+        // DISABLED: Morph weights caching is disabled
         cachedBoneMatrix = null;
 
         readForCache(numberOfVertex);
@@ -496,9 +481,10 @@ public class VertexInfo {
             sb.append(weight_info[weight] + "|");
             sb.append("GU_WEIGHTS(" + skinningWeightCount + ")|");
         }
-        if (morphingVertexCount > 1) {
-            sb.append("GU_VERTICES(" + morphingVertexCount + ")|");
-        }
+        // DISABLED: Morph vertex count is always 1, so this condition is never true
+        // if (morphingVertexCount > 1) {
+        //     sb.append("GU_VERTICES(" + morphingVertexCount + ")|");
+        // }
         if (index_info[index] != null) {
             sb.append(index_info[index] + "|");
         }
